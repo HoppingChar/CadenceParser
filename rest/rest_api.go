@@ -33,7 +33,12 @@ func SetupRouter() *gin.Engine {
 		c.String(http.StatusOK, string(ast_json))
 	}
 
+	on_get_parse := func(c *gin.Context) {
+		c.String(http.StatusOK, "Use post instead.")
+	}
+
 	r.GET("/ping", on_get_ping)
+	r.GET("/parse", on_get_parse)
 	r.POST("/parse", on_post_parse)
 
 	return r
