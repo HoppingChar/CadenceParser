@@ -1,12 +1,15 @@
 # CadenceParser
+- 保证Go版本大于1.18
 
 ```
+go mod tidy
 go run main.go
 ```
 
 通过HTTP POST调用解析方法，例如：
 
 ```
+# curl -X POST <ip>:8080/parse -d "pub contract FlowToken {}"
 POST http://127.0.0.1:8080/parse HTTP/1.1</br>
 
 pub contract FlowToken {}
